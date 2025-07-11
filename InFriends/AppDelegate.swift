@@ -25,7 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.resignOnTouchOutside = true
         
-      
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if #available(iOS 14, *) {
+                ATTrackingManager.requestTrackingAuthorization { status in
+                    if status == .authorized {
+                        let idfa = ASIdentifierManager.shared().advertisingIdentifier
+                    }
+                }
+            } else {
+                if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
+                    let idfa = ASIdentifierManager.shared().advertisingIdentifier
+                }
+            }
+        }
         
         UserInfoInstance.shared.multiTurn()
         
