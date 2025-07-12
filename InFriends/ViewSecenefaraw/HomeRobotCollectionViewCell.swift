@@ -3,7 +3,7 @@ import UIKit
 
 class HomeRobotCollectionViewCell: UICollectionViewCell {
     
-    lazy var voiceCloning:UIImageView = {
+    lazy var bgImg:UIImageView = {
         let img = UIImageView()
         img.backgroundColor = .gray
         img.layer.cornerRadius = 16
@@ -66,7 +66,7 @@ class HomeRobotCollectionViewCell: UICollectionViewCell {
     var model:RCulturalSystem?{
         didSet{
             if let m = model {
-                self.voiceCloning.mySetImage(obj: m.pic)
+                self.bgImg.mySetImage(obj: m.pic)
                 self.longFormNarrativeLbgl.text = m.nickname
                 self.descLabel.text = m.desc
                 self.dhBtn.setTitle("    \(m.connectorsNum)Connectors ", for: .normal)
@@ -78,8 +78,8 @@ class HomeRobotCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         self.contentView.backgroundColor = UIColor(red: 30.0/255.0,green: 20.0/255.0,blue: 46.0/255.0,alpha: 1.0)
         
-        self.contentView.addSubview(voiceCloning)
-        voiceCloning.snp.makeConstraints { make in
+        self.contentView.addSubview(bgImg)
+        bgImg.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         

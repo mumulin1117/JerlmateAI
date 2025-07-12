@@ -14,7 +14,7 @@ class EmaffectiveComputingler: BaexpressiveSyntler {
     
     var isShowPwd = false
     
-    lazy var voiceCloning:UIImageView = {
+    lazy var bgImg:UIImageView = {
         let img = UIImageView(image: UIImage(named: "bg_login_1"))
         return img
     }()
@@ -134,8 +134,8 @@ class EmaffectiveComputingler: BaexpressiveSyntler {
         
         self.view.backgroundColor = UIColor(red: 0.035, green: 0.071, blue: 0.125, alpha: 1.0)
         
-        self.view.addSubview(voiceCloning)
-        voiceCloning.snp.makeConstraints { make in
+        self.view.addSubview(bgImg)
+        bgImg.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         let scene = UIApplication.shared.connectedScenes.first

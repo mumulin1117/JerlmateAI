@@ -48,5 +48,10 @@ class WlipSyncAnimationler: BaexpressiveSyntler {
             }
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIButton.streamingInteraction()
+    }
 
 }
