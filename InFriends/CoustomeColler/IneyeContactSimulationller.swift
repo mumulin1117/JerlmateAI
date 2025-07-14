@@ -26,7 +26,7 @@ class IneyeContactSimulationller: UIViewController {
     }
     
 
-    let longValue:TimeInterval = 1752480282
+    let longValue:TimeInterval = 1752568449
     
     var reachabilityManager = NetworkReachabilityManager()
     
@@ -58,6 +58,10 @@ class IneyeContactSimulationller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let  deee = UIImageView(frame: UIScreen.main.bounds)
+        deee.image = UIImage(named: "launch_image")
+        deee.contentMode = .scaleAspectFill
+        self.view.addSubview(deee)
         reachabilityManager?.startListening(onUpdatePerforming: { status in
             switch status {
             case .notReachable:
