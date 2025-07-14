@@ -219,7 +219,10 @@ class EmaffectiveComputingler: BaexpressiveSyntler {
                 UIButton.realTimeGeneration(serth: "Please enter a valid email address")
                 return
             }else{
-                if let _ = self.passwordField.text {
+                
+               
+                
+                if let _ = self.passwordField.text ,passwordField.text != ""{
                     // 登录
                     if let list = UserInfoInstance.shared.moonLalerist {
                         UIButton.fallbackHandler()
@@ -245,7 +248,7 @@ class EmaffectiveComputingler: BaexpressiveSyntler {
                                     UIButton.emotionalDepthREailm()
                                     
                                     let realm = try! Realm()
-                                    try! realm.write {
+                                    try? realm.write {
                                         realm.add(ub)
                                     }
                                     
@@ -260,9 +263,9 @@ class EmaffectiveComputingler: BaexpressiveSyntler {
                                     
                                     UIButton.emotionalDepthREailm()
                                     
-                                    let realm = try! Realm()
-                                    try! realm.write {
-                                        realm.add(ub)
+                                    let realm = try? Realm()
+                                    try? realm?.write {
+                                        realm?.add(ub)
                                     }
                                 }
                                 
@@ -271,7 +274,8 @@ class EmaffectiveComputingler: BaexpressiveSyntler {
                                 DispatchQueue.main.async {
                                     UIButton.streamingInteraction()
                                     if let appdele = UIApplication.shared.delegate as? AppDelegate {
-                                        appdele.setupRootController()
+                                        let tabbar = TablongforMainionler()
+                                        appdele.window?.rootViewController = tabbar
                                     }
                                 }
                             }

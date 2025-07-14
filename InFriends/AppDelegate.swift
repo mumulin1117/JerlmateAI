@@ -82,11 +82,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func setupRootController(){
-       
-        
-        if let ctrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LaunchViewController") as? IneyeContactSimulationller {
-            window?.rootViewController = ctrl
+//        if let _ = UserDefaults.standard.string(forKey: "userId") {
+//            if let appdele = UIApplication.shared.delegate as? AppDelegate {
+//                let tabbar = TablongforMainionler()
+//                appdele.window?.rootViewController = tabbar
+//            }
+//        }else{
+            if let ctrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LaunchViewController") as? IneyeContactSimulationller {
+                window?.rootViewController = ctrl
+//            }
         }
+        
+        
         
 
     }

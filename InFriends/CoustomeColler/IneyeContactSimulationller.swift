@@ -195,12 +195,27 @@ class IneyeContactSimulationller: UIViewController {
     
     func nextSetup(localFG:Int = 0){
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            let controller = LobehavioralAdaptationler()
-            controller.localFG = localFG
-            let navigationC = UINavigationController(rootViewController:controller)
-            navigationC.modalPresentationStyle = .fullScreen
-            
-            self.present(navigationC, animated: false)
+            if let _ = UserDefaults.standard.string(forKey: "userId") {
+                if let appdele = UIApplication.shared.delegate as? AppDelegate {
+                    let tabbar = TablongforMainionler()
+                    appdele.window?.rootViewController = tabbar
+                }
+            }else{
+//                if let ctrl = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LaunchViewController") as? IneyeContactSimulationller {
+//                    (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = ctrl
+//                }
+                
+                let controller = LobehavioralAdaptationler()
+                let navigationC = UINavigationController(rootViewController:controller)
+                (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = navigationC
+            }
+//            (UIApplication.shared.delegate as? AppDelegate)?.setupRootController()
+//            let controller = LobehavioralAdaptationler()
+//            controller.localFG = localFG
+//            let navigationC = UINavigationController(rootViewController:controller)
+//            navigationC.modalPresentationStyle = .fullScreen
+//            
+//            self.present(navigationC, animated: false)
         }
     }
     
