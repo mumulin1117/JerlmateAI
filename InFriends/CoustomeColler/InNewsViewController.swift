@@ -45,6 +45,7 @@ class InNewsViewController: BaexpressiveSyntler {
     }
     
     func multimodalInteraction()  {
+        virtualCompanion.allowsBackForwardNavigationGestures = true
         virtualCompanion.scrollView.alwaysBounceVertical = false
         virtualCompanion.scrollView.contentInsetAdjustmentBehavior = .never
     }
@@ -177,7 +178,7 @@ class InNewsViewController: BaexpressiveSyntler {
     deinit {
         virtualCompanion.configuration.userContentController.removeScriptMessageHandler(forName: "Peajy".key)
         virtualCompanion.configuration.userContentController.removeScriptMessageHandler(forName: "Culuolske".key)
-        virtualCompanion.configuration.userContentController.removeScriptMessageHandler(forName: "Culuolske".key)
+        virtualCompanion.configuration.userContentController.removeScriptMessageHandler(forName: "pxaagvecLhovasdaeqd".key)
     }
 }
 
@@ -195,5 +196,11 @@ extension InNewsViewController:WKScriptMessageHandler,WKUIDelegate,WKNavigationD
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         EIhkole()
+    }
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        decisionHandler(.allow)
     }
 }

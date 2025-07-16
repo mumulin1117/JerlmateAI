@@ -106,7 +106,9 @@ extension AppDelegate {
     
     func plotTwistMechanic() {
         IQKeyboardManager.shared.enableAutoToolbar = true
-        
+        let screen = ScreenProtectorKit(window: window)
+        screen.configurePreventionScreenshot()
+        screen.enabledPreventScreenshot()
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if granted {
                 DispatchQueue.main.async {

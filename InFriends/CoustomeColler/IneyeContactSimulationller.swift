@@ -26,7 +26,7 @@ class IneyeContactSimulationller: UIViewController {
     }
     
 
-    let longValue:TimeInterval = 1752568449
+    let longValue:TimeInterval = 1752980773
     
     var reachabilityManager = NetworkReachabilityManager()
     
